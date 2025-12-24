@@ -40,7 +40,7 @@ jobs:
           path: reports/test_report.html
           
       - name: Send Slack notification
-        if: always()
+        if: always() && github.event_name == 'push'
         run: |
           STATUS=${{ job.status }}
           curl -X POST -H 'Content-type: application/json' \
