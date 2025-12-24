@@ -82,7 +82,7 @@ def test_click_kakao_login_button_redirects_to_kakao_login_page(page):
     ) 
     refund_cta.click() 
 
-	page.wait_for_url("**/login")
+    page.wait_for_url("**/login")
 	
     kakao_login_button = page.locator( 
 	"button span", 
@@ -96,4 +96,5 @@ def test_click_kakao_login_button_redirects_to_kakao_login_page(page):
     assert "accounts.kakao.com/login" in page.url, (
         f"카카오 로그인 페이지로 이동하지 않음: {page.url}"
     )
+
 
